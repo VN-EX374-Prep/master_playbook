@@ -15,5 +15,5 @@
 
     - name: copy the contents to index.html
       ansible.builtin.copy:
-        content: "{{ content }}"
+        content: "{{ CONTENT }}"
         dest: "{{ DIRECTORY }}/{{ FILE }}"
