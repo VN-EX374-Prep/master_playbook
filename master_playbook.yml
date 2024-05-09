@@ -1,3 +1,19 @@
 ---
-- name: Creating variables
+- name: create content 
   hosts: all
+  become: yes
+  tasks:
+    - name: create directory
+      ansible.builtin.file:
+        path: "{{ DIRECTORY }}"
+        state: directory
+
+    - name: create file
+      ansible.builtin.file:
+        path: "{{ DIRECTORY }}/{{ FILE }}"
+        state: touch 
+
+    - name: copy the content
+      ansible.builtin.copy:
+        content: "{{ CONTENT }}"
+        dest: "{{ DIRECTORY }}/{{ FILE }}"
