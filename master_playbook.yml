@@ -1,5 +1,5 @@
 ---
-- name: create content 
+- name: create the variables 
   hosts: all
   become: yes
   tasks:
@@ -10,10 +10,11 @@
 
     - name: create file
       ansible.builtin.file:
-        path: "{{ DIRECTORY }}/{{ FILE }}"
-        state: touch 
+        path: "{{ FILE }}"
+        state: touch
 
-    - name: copy the content
+    - name: create content
       ansible.builtin.copy:
         content: "{{ CONTENT }}"
         dest: "{{ DIRECTORY }}/{{ FILE }}"
+
