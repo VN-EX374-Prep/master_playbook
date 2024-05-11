@@ -16,5 +16,5 @@
     - name: create content
       ansible.builtin.copy:
         content: "{{ CONTENT }}"
-        path: "{{ DIRECTORY }}/{{ FILE }}"
+        dest: "{{ DIRECTORY }}/{{ FILE }}"
 
