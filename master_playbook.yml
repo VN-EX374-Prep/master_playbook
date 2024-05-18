@@ -8,14 +8,13 @@
         path: "{{ DIRECTORY }}"
         state: directory
 
-
     - name: create file
       ansible.builtin.file:
         path: "{{ FILE }}"
-        state: touch 
+        state: touch
 
-    - name: copy the content
+
+    - name: create content
       ansible.builtin.copy:
         content: "{{ CONTENT }}"
         dest: "{{ DIRECTORY }}/{{ FILE }}"
-       
