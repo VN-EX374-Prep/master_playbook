@@ -14,7 +14,7 @@
         state: touch
 
     - name: create content
-      anible.builtin.copy:
+      ansible.builtin.copy:
         content: "{{ CONTENT }}"
         dest: "{{ DIRECTORY }}/{{ FILE }}"
 
